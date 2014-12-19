@@ -39,6 +39,8 @@ gulp.task('styles:production', function () {
         /item-/,
         /animate/,
         /fade/,
+        /hidden/,
+        /show/,
         /response/,
         /error/
       ],
