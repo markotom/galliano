@@ -25,6 +25,9 @@ function galliano_configure_theme() {
   // Image sizes
   add_action( 'init', 'galliano_image_sizes' );
 
+  // Remove admin menu items (posts, pages, comments)
+  add_action( 'admin_init', 'remove_admin_menu_items' );
+
 }
 
 // Theme support
@@ -131,6 +134,16 @@ function galliano_image_sizes() {
   // Add thumb-large size
   add_image_size( 'thumb-large', 1024, 525, true );
 
+}
+
+// Remove admin menu items
+function remove_admin_menu_items() {
+  // Posts
+  remove_menu_page('edit.php');
+  // Pages
+  remove_menu_page('edit.php?post_type=page');
+  // Comments
+  remove_menu_page('edit-comments.php');
 }
 
 ?>
