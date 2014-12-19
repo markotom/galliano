@@ -31,4 +31,19 @@
   add_action( 'wp_ajax_contactform_action', 'contactform_action_callback' );
   add_action( 'wp_ajax_nopriv_contactform_action', 'contactform_action_callback' );
 
+  // Redirect to home in every case
+  function redirect_to_home( $request ) {
+    $query = new WP_Query();
+    $query->parse_query( $request );
+
+    if ( ! $query->is_home() ) {
+      wp_redirect( home_url() );
+      exit;
+    }
+
+    return $request;
+  }
+
+  add_filter( 'request', 'redirect_to_home' );
+
 ?>
