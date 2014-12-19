@@ -98,7 +98,7 @@ gulp.task('theme', [
       'option-tree/**/*'
     ], { base: './' })
     .pipe(zip(pkg.name + '-' + pkg.version + '.zip'))
-    .pipe(gulp.dest('./built'));
+    .pipe(gulp.dest('./'));
 });
 
 // Default development task
