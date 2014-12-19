@@ -31,12 +31,7 @@ function galliano_configure_theme() {
 }
 
 // Theme support
-function galliano_theme_support() {
-
-  // Add menus support
-  add_theme_support( 'menus' );
-
-}
+function galliano_theme_support() {}
 
 // Head cleanup
 function galliano_head_cleanup() {
