@@ -139,6 +139,8 @@ function galliano_admin_menu() {
   remove_menu_page('edit.php?post_type=page');
   // Comments
   remove_menu_page('edit-comments.php');
+  // Links
+  remove_menu_page('link-manager.php');
 }
 
 ?>
