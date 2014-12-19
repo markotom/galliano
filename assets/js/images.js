@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
   };
 
 
-  $(window).bind('resize', function () {
+  $(window).resize(function () {
 
     // Set correct height of containers
     setCorrectHeight();
