@@ -35,26 +35,14 @@ function galliano_wp_title( $title, $separator ) {
 add_filter( 'request', 'galliano_redirect' );
 
 function galliano_redirect( $request ) {
-  $query = new WP_Query();
-  $query->parse_query( $request );
+  if ( ! is_admin() ) {
+    $query = new WP_Query();
+    $query->parse_query( $request );
 
-  if (
-    $query->is_404()        ||
-    $query->is_archive()    ||
-    $query->is_attachment() ||
-    $query->is_author()     ||
-    $query->is_category()   ||
-    $query->is_date()       ||
-    $query->is_feed()       ||
-    $query->is_page()       ||
-    $query->is_search()     ||
-    $query->is_single()     ||
-    $query->is_singular()   ||
-    $query->is_tag()        ||
-    $query->is_time()
-  ) {
-    wp_redirect( home_url() );
-    exit;
+    if ( ! $query->is_home() ) {
+      wp_redirect( home_url() );
+      exit;
+    }
   }
 
   return $request;

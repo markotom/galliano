@@ -26,7 +26,7 @@ function galliano_configure_theme() {
   add_action( 'init', 'galliano_image_sizes' );
 
   // Remove admin menu items (posts, pages, comments)
-  add_action( 'admin_init', 'remove_admin_menu_items' );
+  add_action( 'admin_menu', 'galliano_admin_menu' );
 
 }
 
@@ -137,7 +137,7 @@ function galliano_image_sizes() {
 }
 
 // Remove admin menu items
-function remove_admin_menu_items() {
+function galliano_admin_menu() {
   // Posts
   remove_menu_page('edit.php');
   // Pages
