@@ -116,6 +116,14 @@ function custom_theme_options() {
         'section'     => 'general'
       ),
 
+      // Logo navbar
+      array(
+        'id'          => 'logo_navbar',
+        'label'       => 'Logo (navbar)',
+        'type'        => 'upload',
+        'section'     => 'general'
+      ),
+
       // Logo mobile
       array(
         'id'          => 'logo_xs',
