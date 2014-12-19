@@ -1,0 +1,72 @@
+#section-3 {
+  border: @line-height-computed / 2 solid #fff;
+
+  /* Needed to create a responsive grid */
+  .grid-sizer { .masonry-grid-width(1); }
+
+  .item {
+    .masonry-grid-width(4);
+    .masonry-grid-height(4);
+
+    float: left;
+    display: none;
+    background-color: @gray-base;
+
+    a {
+      .opacity(1);
+      .transition(opacity 300ms ease-in-out);
+
+      height: 100%;
+      display: block;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &:hover {
+        .opacity(.4);
+        .transition(opacity 300ms ease-in-out);
+      }
+    }
+  }
+
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4,
+  .item-5,
+  .item-6,
+  .item-7,
+  .item-8,
+  .item-9 { display: block; }
+}
+
+@media (min-width: @screen-md-min) {
+  #section-3 {
+    .item {
+      .masonry-grid-width(2);
+      .masonry-grid-height(4);
+
+      display: block;
+    }
+
+    .item-2,
+    .item-10 {
+      .masonry-grid-width(4);
+      .masonry-grid-height(6);
+    }
+
+    .item-3,
+    .item-4,
+    .item-6,
+    .item-7 {
+      .masonry-grid-height(3);
+    }
+
+    .item-5,
+    .item-9,
+    .item-11,
+    .item-12 {
+      .masonry-grid-height(6);
+    }
+  }
+}

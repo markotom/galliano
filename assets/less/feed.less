@@ -1,0 +1,77 @@
+.feed {
+  margin-top: @line-height-computed;
+  padding: @line-height-computed;
+  background-color: @body-bg;
+
+  .item + .item {
+    margin-top: @line-height-computed;
+    padding-top: @line-height-computed;
+    border-top: 1px solid lighten(@brand-primary, 35%);
+  }
+
+  .item {
+    img.item-user-avatar {
+      .pull-left;
+
+      margin-right: @line-height-computed / 2;
+      margin-bottom: @line-height-computed / 4;
+      border-radius: 4px;
+    }
+
+    .item-user-username {
+      font-size: 140%;
+      font-weight: @headings-font-weight;
+    }
+
+    .item-user-screename { font-size: 120%; }
+
+    .item-text { clear: both; }
+
+    .item-thumbnail { margin-top: @line-height-computed / 2; }
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .feed {
+    font-size: 125%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    .item {
+      img.item-user-avatar {
+        margin-top: @line-height-computed / 4;
+        margin-bottom: @line-height-computed;
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .feed { width: 40%; }
+}
+
+@media (min-width: @screen-lg-min) {
+  .feed { width: 30%; }
+}
+
+.btn-social {
+  .text-center;
+
+  margin: 0 auto;
+  display: block;
+  height: 50px;
+  width: 50px;
+  font-size: 250%;
+  border-radius: 25px;
+  background-color: @body-bg;
+}
+
+@media (min-width: @screen-sm-min) {
+  .btn-social {
+    height: 60px;
+    width: 60px;
+    font-size: 300%;
+    border-radius: 30px;
+  }
+}

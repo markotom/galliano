@@ -1,0 +1,146 @@
+/* 100% height required to full page */
+html,
+body,
+.wrapper,
+.section,
+.section-container { height: 100%; }
+
+/* Set padding top according to .navbar-fixed-top height */
+.fp-section {
+  padding-top: @navbar-height;
+  background-color: #fff;
+}
+
+.section-container { .box-sizing(border-box); }
+
+/* Background fixed, resized using jQuery */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &.background-width { width: 100%; }
+
+  &.background-height { height: 100%; }
+
+  &.background-xs {}
+
+  &.background-sm { .responsive-invisibility; }
+
+  @media (min-width: @screen-sm-min) {
+    &.background-xs { .responsive-invisibility; }
+  }
+
+  @media (min-width: @screen-sm-min) {
+    &.background-sm { .responsive-visibility; }
+  }
+}
+
+#section-1,
+#section-2 {
+  border: @line-height-computed / 4 solid #fff;
+
+  .item {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    a {
+      .opacity(0);
+      .transition(opacity 200ms  ease-in-out);
+
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: hidden;
+      font: 110% 'Fjalla One', @font-family-sans-serif;
+      color: #fff;
+      line-height: @line-height-base * .85;
+      background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .7);
+
+      &:hover { .opacity(1); }
+
+      img {
+        margin: 0 auto;
+        display: block;
+        height: 100%;
+        padding: @line-height-computed / 2;
+      }
+
+      span.align-bottom {
+        position: absolute;
+        padding: @line-height-computed / 2;
+        display: block;
+        bottom: 0;
+      }
+
+      span.play-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        font-size: 400%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
+             -o-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  #section-1 .item a,
+  #section-2 .item a {
+    font-size: 125%;
+    line-height: @line-height-base * .9;
+
+    span.align-bottom { padding: @line-height-computed; }
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  #section-1 .item a,
+  #section-2 .item a { font-size: 135%; }
+}
+
+#section-4,
+#section-5,
+#section-6 {
+  /* Set @brand-primary as background */
+  .bg-variant(@brand-primary);
+
+  /* Prevent height if content is more than 100% of window */
+  .section-container {
+    min-height: 100%;
+    height: auto !important;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  #section-4,
+  #section-5,
+  #section-6 {
+    .opacity(.95);
+
+    background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .9);
+
+    .section-container {
+      padding: @line-height-computed * 4 !important;
+      border: 0 !important;
+    }
+  }
+}
+
+/* Wrapper of fontawesome spinner */
+.spinner {
+  .text-center;
+
+  padding: @line-height-computed * 2;
+  font-size: 150%;
+
+  .fa-spin { .animation-duration(.5s); }
+
+  &.spinner-inverse { color: @gray; }
+}

@@ -1,0 +1,140 @@
+/* Home is the only section without background */
+#section-0 {
+  padding-top: @line-height-computed;
+  background: none;
+}
+
+#brand {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+.logo-xs {}
+
+.logo-sm { .responsive-invisibility; }
+
+@media (min-width: @screen-sm-min) {
+  #brand {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    padding: 0;
+    margin-right: @line-height-computed * 2;
+
+    .logo { .img-responsive; }
+  }
+
+  .logo-xs { .responsive-invisibility; }
+
+  .logo-sm { .responsive-visibility; }
+}
+
+@media (min-width: @screen-md-min) {
+  #brand { margin-right: @line-height-computed * 6; }
+}
+
+/* Social menu */
+.menu {
+  .list-inline;
+
+  position: absolute;
+  bottom: @line-height-computed * 2;
+  left: @line-height-computed * 2;
+  width: 145px;
+  font-size: 200%;
+
+  a {
+    .text-center;
+    .transition(background 200ms ease-in-out);
+
+    padding-top: 12px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: @gray-base;
+    background-color: @gray-lighter;
+    border-radius: 30px;
+
+    &:hover,
+    &:focus {
+      .transition(background 200ms ease-in-out);
+
+      background-color: @brand-primary;
+    }
+  }
+
+  li {
+    padding: 0;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .menu {
+    right: 0;
+    bottom: -50px;
+    left: auto;
+    overflow: hidden;
+    width: 70%;
+    height: 100px;
+    font-size: 130%;
+
+    a {
+      width: 40px;
+      height: 40px;
+      color: @gray-lighter;
+      background-color: @brand-primary;
+
+      &:hover,
+      &:focus { background-color: @gray-dark; }
+    }
+
+    li { margin-right: 0; }
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .menu {
+    bottom: 0;
+    height: 60px;
+    font-size: 180%;
+
+    a {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.next { .responsive-invisibility; }
+
+@media (min-width: @screen-sm-min) {
+  .next {
+    .responsive-visibility;
+    .text-center;
+
+    position: absolute;
+    bottom: -150px;
+    left: 45%;
+
+    a {
+      .transition(background 200ms ease-in-out);
+
+      display: block;
+      height: 80px;
+      width: 80px;
+      color: #fff;
+      font-size: 400%;
+      border-radius: 40px;
+      background-color: @gray-base;
+
+      &:hover,
+      &:focus {
+        .transition(background 200ms ease-in-out);
+
+        background-color: @gray-dark;
+      }
+    }
+  }
+}

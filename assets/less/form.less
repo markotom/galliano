@@ -1,0 +1,67 @@
+.form-horizontal {
+  overflow: hidden;
+
+  .col-sm-4 + .col-sm-4 { margin-top: 15px; }
+
+  textarea#message { height: @line-height-computed * 10; }
+
+  button {
+    .pull-right;
+
+    border: 0;
+    padding: (@line-height-computed / 4) @line-height-computed;
+    color: @brand-primary;
+    font-family: 'Fjalla One', @font-family-sans-serif;
+    text-transform: uppercase;
+  }
+
+  .form-control {
+    .placeholder(@brand-primary);
+
+    border: 0;
+    font-family: 'Fjalla One', @font-family-sans-serif;
+
+    &::-moz-placeholder { text-transform: uppercase; }
+
+    &:-ms-input-placeholder { text-transform: uppercase; }
+
+    &::-webkit-input-placeholder { text-transform: uppercase; }
+
+    &:focus {
+
+      &::-moz-placeholder { opacity: .5; }
+
+      &:-ms-input-placeholder { opacity: .5; }
+
+      &::-webkit-input-placeholder { opacity: .5; }
+
+    }
+  }
+}
+
+
+@media (min-width: @screen-sm-min) {
+  .form-horizontal {
+    .col-sm-4 + .col-sm-4 { margin-top: 0; }
+
+    textarea#message { height: @line-height-computed * 20; }
+
+    button {
+      font-size: 250%;
+    }
+
+    .form-control { .input-lg; }
+  }
+}
+
+label.error {
+  background-color: @brand-danger;
+  padding: @line-height-computed / 4;
+  color: #fff;
+  z-index: 1000;
+}
+
+form .response-status {
+  .alert;
+  .alert-warning;
+}

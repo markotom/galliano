@@ -1,0 +1,14 @@
+/* Mixin to build masonry layout column */
+.masonry-grid-width(@index){
+  .make-masonry(@index, width);
+}
+
+/* Mixin to build masonry layout row */
+.masonry-grid-height(@index){
+  .make-masonry(@index, height);
+}
+
+/* Mixin to make masonry layout based on grid columns */
+.make-masonry(@index, @type: width) {
+  @{type}: percentage(@index / @grid-columns);
+}
