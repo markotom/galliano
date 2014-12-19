@@ -24,7 +24,7 @@
   <body <?php body_class(); ?>>
     <!-- .navbar.navbar-fixed-top -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <?php if ( $logo_navbar = ot_get_option( 'logo-navbar' ) ) : ?>
+      <?php if ( $logo_navbar = ot_get_option( 'logo_navbar' ) ) : ?>
       <div data-menuanchor="home">
         <a href="<?php echo home_url() ?>" rel="home">
           <img class="logo logo-sm" src="<?php echo $logo_navbar ?>" alt="<?php bloginfo( 'sitename' ) ?>">
