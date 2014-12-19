@@ -5,7 +5,7 @@
         <!--.brand -->
         <div id="brand">
           <h1>
-            <a href="/">
+            <a href="<?php echo home_url() ?>" rel="home">
               <?php if ( $logo_xs = ot_get_option( 'logo_xs' ) ) : ?>
               <?php if ( $logo_xs_2x = ot_get_option( 'logo_xs_2x' ) ) : ?>
               <img class="logo logo-xs" src="<?php echo $logo_xs ?>" data-at2x="<?php echo $logo_xs_2x ?>" alt="<?php bloginfo( 'sitename' ) ?>">
