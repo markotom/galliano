@@ -20,7 +20,7 @@
 <!-- .section-container -->
 <div class="section-container">
   <!-- .btn-social -->
-  <a class="btn-social" href="http://twitter.com/ceci_galliano">
+  <a class="btn-social" href="http://facebook.com/<?php echo ot_get_option( 'facebook-page-id' ) ?>">
     <span class="fa fa-facebook"></span>
   </a><!-- /.btn-social -->
 

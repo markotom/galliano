@@ -13,7 +13,7 @@
 <!-- .section-container -->
 <div class="section-container">
   <!-- .btn-social -->
-  <a class="btn-social" href="http://twitter.com/ceci_galliano">
+  <a class="btn-social" href="http://twitter.com/<?php echo ot_get_option( 'twitter-screen-name' ) ?>">
     <span class="fa fa-twitter"></span>
   </a><!-- /.btn-social -->
 
